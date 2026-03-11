@@ -1,0 +1,114 @@
+
+
+<footer class="bg-[#1a5d48] text-white font-sans p-10 relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    
+    <div class="space-y-6">
+      <div class="flex items-center gap-2">
+        <div class="bg-white p-2 rounded-lg">
+           <img src="logo_url_here" alt="Kore International" class="h-12">
+        </div>
+      </div>
+      <p class="text-[#c1d37f] text-sm leading-relaxed">
+        We Believe In Our Strength And Our Strength Is "Quality". We are "Natural Spices Wholesale Supplier & Exporter"
+      </p>
+      <div class="space-y-2 text-sm text-yellow-100">
+        <p class="flex items-center gap-2">🌐 www.koreagro.com</p>
+        <p class="flex items-center gap-2">📧 koreinternational.trustpass.alibaba.com</p>
+      </div>
+      <div class="flex gap-4 items-center">
+        <img src="qr_1" class="w-16 h-16 rounded bg-white p-1" alt="QR">
+        <img src="qr_2" class="w-16 h-16 rounded bg-white p-1" alt="QR">
+      </div>
+      <div class="flex gap-4 text-2xl text-yellow-400">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-[#e1ea9c] border-b-2 border-yellow-600/30 inline-block mb-6">Information</h3>
+      <ul class="space-y-3 text-sm font-medium">
+        <li class="hover:text-yellow-400 cursor-pointer">Home</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Harvest Chart</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Inquiry</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Blog</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Contact us</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Global Export</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-[#e1ea9c] border-b-2 border-yellow-600/30 inline-block mb-6">Products</h3>
+      <ul class="space-y-3 text-sm font-medium">
+        <li class="hover:text-yellow-400 cursor-pointer">Spices</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Herbs And Leaves</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Seeds</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Millets And Grains</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Dried Fruits And Nuts</li>
+        <li class="hover:text-yellow-400 cursor-pointer">Coffee</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-[#e1ea9c] border-b-2 border-yellow-600/30 inline-block mb-6">Offices Address</h3>
+      <div class="space-y-6">
+        <div class="flex gap-3">
+          <div class="bg-white/10 p-2 rounded h-fit">📍</div>
+          <div class="text-xs">
+            <h4 class="font-bold text-yellow-400 mb-1">India</h4>
+            <p>A-441, WestBank Ashram Road, Ahmedabad, Gujarat, India - 380009</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="bg-white/10 p-2 rounded h-fit">📍</div>
+          <div class="text-xs">
+            <h4 class="font-bold text-yellow-400 mb-1">Dubai</h4>
+            <p>Compass Building, AL Shohada Road, AL Hamra Industrial Zone-FZ, UAE.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-800 bg-[#d4e157] -mx-10 -mb-10 p-4 px-10">
+    <p>Copyright © 2026 Kore Agro. All Rights Reserved.</p>
+    <p>Elevating your online presence with <span class="font-bold">Topaz Infotech's</span> touch.</p>
+  </div>
+
+  <div class="fixed bottom-10 right-10 bg-green-500 p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition">
+     <span class="text-white text-2xl font-bold">W</span>
+  </div>
+</footer>
+
+
+
+<script>
+
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+
+    // মেনু খোলার ফাংশন
+    menuOpen.addEventListener('click', () => {
+        mobileMenu.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // স্ক্রল বন্ধ করা
+    });
+
+    // মেনু বন্ধ করার ফাংশন
+    function closeMenu() {
+        mobileMenu.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // স্ক্রল চালু করা
+    }
+
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu); // ব্যাকগ্রাউন্ডে ক্লিক করলে বন্ধ হবে
+</script>
+
+</body>
+</html>

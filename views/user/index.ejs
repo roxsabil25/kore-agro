@@ -1,0 +1,325 @@
+<%- include('partials/header') %>
+
+<main>
+<section class="hero relative w-full h-[400px] md:h-[600px] overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="img/backgroundimg.jpg" alt="Spices Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
+    <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-start text-white">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-2xl mb-8 tracking-tight">
+            Discover the World's Best Spices: <br>
+            <span class="text-[#D9E167]">From Tradition to Innovation!</span>
+        </h1>
+        
+        <a href="#" class="bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-full font-semibold text-lg transition duration-300 shadow-lg hover:scale-105 active:scale-95">
+            KNOW MORE
+        </a>
+    </div>
+</section>
+
+
+
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      
+      <div class="lg:w-1/2 space-y-6">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[#005E48] tracking-tight">
+          Hi, We Are Kore Agro !
+        </h2>
+        
+        <p class="text-gray-600 leading-relaxed text-lg">
+          Since 2015, we've been exporting and importing spices, oilseeds and herbs worldwide. 
+          Currently, we export to over 81 countries and import from more than 9 countries. 
+          Our rapid growth over these 9 years is a testament to our commitment to quality.
+        </p>
+        
+        <div class="p-6 bg-[#D9E167]/20 border-l-4 border-[#D9E167] rounded-r-lg">
+          <h3 class="text-xl md:text-2xl font-bold italic text-[#005E48]">
+            "We grow Quality, We harvest Trust."
+          </h3>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2">
+        <div class="relative overflow-hidden rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <img src="img/about-image.jpg" alt="About Kore Agro" class="w-full h-auto object-cover">
+          <div class="absolute inset-0 bg-[#005E48]/10"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-[#f7fe9f] py-16 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-bold text-gray-800 mb-2">Check Our Products</h2>
+            <img src="img/bdividerline.png" alt="divider" class="mx-auto">
+        </div>
+
+        <div class="relative flex items-center">
+            <button id="prevBtn" class="absolute -left-10 bg-white p-3 rounded-full shadow-lg z-20 hidden lg:block hover:bg-gray-100">◀</button>
+            
+            <div id="slider" class="flex gap-6 overflow-x-auto snap-x scroll-smooth no-scrollbar w-full">
+                 <% products.forEach((product) => { %>
+                   <a href="/products/details/<%= product._id %>"></a>
+                <div class="min-w-[280px] md:min-w-[300px] bg-white rounded-2xl shadow-lg p-5 snap-center">
+                   
+                      <img src="<%= product.productsImge %>" class="w-full h-48 object-cover rounded-xl mb-4">
+                      </a>
+                    <span class="block text-xl font-bold text-gray-800"><%= product.productname %>
+                    <a href=" /products/details/<%= product._id %>  "        class="text-green-700 font-bold border-b-2">Read more</a>
+                </div>
+
+
+<% }) %>
+
+
+
+               
+
+               
+                </div>
+
+            <button id="nextBtn" class="absolute -right-10 bg-white p-3 rounded-full shadow-lg z-20 hidden lg:block hover:bg-gray-100">▶</button>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // নেক্সট বাটন
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 320, behavior: 'smooth' }); // কার্ডের উইডথ অনুযায়ী ভ্যালু সেট করা
+        });
+
+        // প্রিভিয়াস বাটন
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+    </script>
+
+    <section class="mt-[150px]   px-4">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    
+    <div class="relative group h-64 rounded-xl overflow-hidden shadow-lg">
+      <img src="img/spices.jpg" alt="Spices" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+        <h3 class="text-2xl font-bold">Spices</h3>
+      </div>
+    </div>
+
+    <div class="relative group h-64 rounded-xl overflow-hidden shadow-lg">
+      <img src="img/spices.jpg" alt="Herbs" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white gap-3">
+        <h3 class="text-2xl font-bold">Herbs And Leaves</h3>
+        <button class="bg-[#D98C58] hover:bg-[#c67a48] px-6 py-2 rounded-full text-sm font-semibold transition">
+          View Products
+        </button>
+      </div>
+    </div>
+
+
+        <div class="relative group h-64 rounded-xl overflow-hidden shadow-lg">
+      <img src="img/spices.jpg" alt="Spices" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+        <h3 class="text-2xl font-bold">Spices</h3>
+      </div>
+    </div>
+
+
+        <div class="relative group h-64 rounded-xl overflow-hidden shadow-lg">
+      <img src="img/spices.jpg" alt="Spices" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+        <h3 class="text-2xl font-bold">Spices</h3>
+      </div>
+    </div>
+
+
+
+
+    </div>
+
+
+
+</section>
+</section>
+
+
+
+
+<section class="relative w-full bg-[#f7fe9f] overflow-hidden py-10">
+  
+  <div class="flex flex-col items-center mb-8">
+    <h2 class="text-2xl md:text-4xl font-bold text-gray-800 drop-shadow-sm text-center">
+      Our Packaging
+    </h2>
+    <div class="w-[150px] h-1  mt-2 rounded-full">
+      <img src="/img/bdividerline.png" alt="">
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4">
+    <div id="slider-container" class="relative w-full max-w-6xl mx-auto rounded-xl shadow-lg overflow-hidden ">
+      <div class="relative aspect-[4/3] md:aspect-[16/7] w-full">
+        <img id="slideshow-im" 
+             src="/img/packaging-1.jpg" 
+             class="absolute inset-0 w-full h-full object-contain md:object-cover transition-opacity duration-1000 opacity-100 p-2 md:p-0" 
+             alt="Packaging Slideshow">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+    const image = [
+        "/img/packaging--2.jpg",
+        "/img/backgroundimg.jpg",
+        
+        
+        // ... এভাবে img20 পর্যন্ত এড করুন
+    ];
+
+    let currentInde = 0;
+    const imgElemen = document.getElementById('slideshow-im');
+
+    function changeImag() {
+        // opacity কমিয়ে একটি fade effect আনা যায়
+        imgElemen.style.opacity = 0;
+
+        setTimeout(() => {
+            currentInde = (currentInde + 1) % image.length;
+            imgElemen.src = image[currentInde];
+            imgElemen.style.opacity = 1;
+        }, 500); // 0.5 সেকেন্ড সময় নেবে fade হতে
+    }
+
+    // প্রতি ৫ সেকেন্ড (৫০০০ মিলিসেকেন্ড) পর পর ফাংশনটি কল হবে
+    setInterval(changeImag, 5000); 
+</script>
+
+
+
+<section class="proff py-10 bg-[#f7fe9f] overflow-hidden">
+  <div class="container mx-auto">
+    <div class="content text-center mb-8">
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">Proof of Excellence</h2>
+      <div class="flex justify-center mt-2">
+        <img src="/img/bdividerline.png" alt="Divider" class="h-2 w-[150px]">
+      </div>
+    </div>
+
+    <div class="relative flex overflow-x-hidden">
+      <div class="flex animate-marquee whitespace-nowrap items-center">
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/organicL.webp" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/apeda.png" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/aeoL.webp" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/threestar.png" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        </div>
+
+      <div class="flex absolute top-0 animate-marquee whitespace-nowrap items-center" aria-hidden="true" style="left: 100%;">
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/organicL.webp" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/apeda.png" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/aeoL.webp" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        <div class="imgCard mx-4 w-32 md:w-44 shrink-0">
+          <img src="/img/threestar.png" class="w-full  hover:grayscale-0 transition duration-300" alt="">
+        </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<style>
+  .product-card {
+    background: #ffffff; /* কার্ডের ভেতরটা সাদা রাখলে ছবি ভালো ফোটে, তবে পুরো সেকশন রঙিন */
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>
+
+<section class="py-16 md:py-24 bg-[#f1f8e9]"> <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-green-100 pb-6">
+      <div>
+        <span class="text-orange-600 font-bold uppercase tracking-wider text-sm">Our Collection</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-green-900 mt-1">
+          Explore Our Products
+        </h2>
+      </div>
+      <p class="text-gray-600 max-w-xs mt-4 md:mt-0 text-sm italic">
+        "Pure and natural products delivered right to your doorstep."
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+
+      <% products.forEach((product) => { %>
+        <a href="/products/details/<%= product._id %>" 
+           class="product-card group relative flex flex-col rounded-2xl transition-all duration-300 overflow-hidden">
+          
+          <div class="relative aspect-square overflow-hidden bg-gray-50 p-4">
+            <img src="<%= product.productsImge %>" 
+                 class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                 alt="<%= product.productname %>">
+            
+            <div class="absolute inset-0 bg-green-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span class="bg-white text-green-900 px-4 py-2 rounded-full text-xs font-bold shadow-md">Details</span>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col items-center text-center">
+            <h3 class="text-gray-800 font-bold text-base md:text-lg mb-2 line-clamp-1 group-hover:text-green-700 transition-colors">
+              <%= product.productname %>
+            </h3>
+            
+            
+            
+            <span class="inline-flex items-center text-xs font-bold text-green-700 uppercase tracking-tighter">
+              View Product 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 group-hover:ml-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      <% }) %>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  /* পুরো বডিতে ফন্টটি অ্যাপ্লাই করে দিন */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+        /* স্মুথ অ্যানিমেশনের জন্য কাস্টম ট্রানজিশন */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Chrome, Safari, and Opera এর জন্য */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* IE, Edge, and Firefox এর জন্য */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
+  @layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<header class="w-full font-sans shadow-lg relative z-50">
+  
+  <div class="bg-[#D9E167] py-2 px-4 md:px-12 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm font-medium text-[#005E48]">
+    <div class="flex items-center gap-2 mb-2 md:mb-0">
+      <span>📧</span>
+      <a href="mailto:vinay@koreagro.com" class="hover:underline">vinay@koreagro.com</a>
+    </div>
+    <div class="italic font-bold text-[10px] md:text-sm hidden sm:block">
+      "We grow Quality, We harvest Trust."
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span>📞</span>
+        <span>+91 96624 11878</span>
+      </div>
+      <div class="flex gap-3">
+        <span>f</span> <span>📸</span> <span>in</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bg-[#005E48] text-white py-4 px-4 md:px-12 flex justify-between items-center relative">
+    
+    <div class="hidden lg:flex items-center gap-8 font-semibold uppercase text-sm tracking-wider">
+      <a href="/products"><div class="hover:text-[#D9E167] cursor-pointer transition">Products ▼</div></a>
+      <a href="/about"><div class="hover:text-[#D9E167] cursor-pointer transition">About Us ▼</div></a>
+      <a href="/"><div class="hover:text-[#D9E167] cursor-pointer transition">Home</div></a>
+    </div>
+
+    <div class="lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex items-center gap-2">
+      <div class="w-10 h-10 bg-[#D9E167] rounded-full flex items-center justify-center text-xl">🌱</div>
+      <div class="flex flex-col leading-none">
+        <span class="text-2xl font-black text-[#D9E167]">KORE</span>
+        <span class="text-[8px] tracking-widest font-light">INTERNATIONAL</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden lg:flex items-center gap-8 font-semibold uppercase text-sm tracking-wider">
+        <div class="hover:text-[#D9E167] cursor-pointer transition">Inquiry</div>
+        <div class="hover:text-[#D9E167] cursor-pointer transition">Blog</div>
+        <div class="hover:text-[#D9E167] cursor-pointer transition">Contact</div>
+      </div>
+
+      <a href="#" class="border-2 border-[#D9E167] text-[#D9E167] px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-[#D9E167] hover:text-[#005E48] transition">
+        Brochure
+      </a>
+      
+      <button id="menu-open" class="lg:hidden text-3xl text-[#D9E167]">☰</button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="fixed inset-0 bg-[#005E48] z-[100] transform -translate-x-full lg:hidden">
+    <div class="flex justify-end p-6">
+      <button id="menu-close" class="text-4xl text-[#D9E167]">&times;</button>
+    </div>
+
+    <div class="flex flex-col items-center gap-6 mt-10 text-white font-bold uppercase tracking-widest text-lg">
+      <a href="/products"hover:text-[#D9E167] transition">Products</a>
+      <a href="/about" class="hover:text-[#D9E167] transition">About Us</a>
+      <a href="/" class="hover:text-[#D9E167] transition">Home</a>
+      <a href="#" class="hover:text-[#D9E167] transition">Inquiry</a>
+      <a href="#" class="hover:text-[#D9E167] transition">Blog</a>
+      <a href="#" class="hover:text-[#D9E167] transition">Contact</a>
+      
+      <div class="mt-10 pt-10 border-t border-white/20 w-full text-center">
+        <p class="text-sm font-light lowercase opacity-70">vinay@koreagro.com</p>
+        <p class="text-[#D9E167] mt-2">+91 96624 11878</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-[90]"></div>
+
+</header>
