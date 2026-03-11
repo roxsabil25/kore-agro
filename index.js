@@ -108,6 +108,7 @@ app.get('/products/details/:id', async (req, res) => {
 
     // ১. আইডি ভ্যালিড ফরম্যাটে আছে কি না চেক করুন
     if (!mongoose.Types.ObjectId.isValid(id)) {
+      console.log("Invalid ID:", id);
       return res.status(404).send("Invalid Product ID format");
     }
 
