@@ -12,7 +12,10 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
-  .catch(err => console.log(err));
+  .catch(err => {
+      console.error("MongoDB Connection Error:", err);
+      process.exit(1); // কানেকশন না হলে অ্যাপটি ক্র্যাশ করে স্টপ হবে
+  });
   
 
 const multerconfig = require("./config/multer");
