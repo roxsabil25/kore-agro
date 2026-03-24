@@ -173,7 +173,9 @@ app.get('/products', async (req, res) => {
     }
 });
 
-
+app.get('/healthz', (req, res) => {
+  res.status(200).send("OK");
+});
 
 
 // Server Listen
