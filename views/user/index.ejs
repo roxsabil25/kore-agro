@@ -3,7 +3,7 @@
 <main>
 <section class="hero relative w-full h-[400px] md:h-[600px] overflow-hidden">
     <div class="absolute inset-0">
-        <img src="img/backgroundimg.jpg" alt="Spices Background" class="w-full h-full object-cover">
+        <img id="slideshow-img" src="img/backgroundimg.jpg" alt="Spices Background" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
@@ -317,7 +317,34 @@
   </div>
 </section>
 
+<script>
+    const images = [
+        
+        "img/WhatsApp Image 2026-03-25 at 12.56.55 AM.jpeg",
+        "img/WhatsApp Image 2026-03-25 at 12.6.56 AM.jpeg",
+        "img/WhatsApp Image 2026-03-25 at 12.56.58 AM.jpeg",
+        "img/WhatsApp Image 2026-03-25 at 12.56.58 AM.jpeg",
+        
+        // ... এভাবে img20 পর্যন্ত এড করুন
+    ];
 
+    let currentIndex = 0;
+    const imgElement = document.getElementById('slideshow-img');
+
+    function changeImage() {
+        // opacity কমিয়ে একটি fade effect আনা যায়
+        imgElement.style.opacity = 0;
+
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+            imgElement.style.opacity = 1;
+        }, 500); // 0.5 সেকেন্ড সময় নেবে fade হতে
+    }
+
+    // প্রতি ৫ সেকেন্ড (৫০০০ মিলিসেকেন্ড) পর পর ফাংশনটি কল হবে
+    setInterval(changeImage, 5000);
+</script>
 </main>
 
 
